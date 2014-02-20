@@ -35,6 +35,9 @@ class ImageView
         $doc = new DOMDocument();
         $img = $doc->createElement('img');
         $img->setAttribute('src', $this->getUrl());
+        if ($this->getAlt()) {
+            $img->setAttribute('alt', $this->getAlt());
+        }
         $img->setAttribute('width', $this->getWidth());
         $img->setAttribute('height', $this->getHeight());
         $doc->appendChild($img);
